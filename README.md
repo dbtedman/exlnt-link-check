@@ -3,7 +3,7 @@
 ## Getting Started
 
 ```bash
-yarn install && yarn link-check
+yarn install && yarn link-check --in in.csv --out out.csv
 ```
 
 ## Want to lean more?

@@ -9,3 +9,6 @@
 
 # Yarn Dependencies
 /node_modules/
+
+# Data
+/*.csv
