@@ -1,67 +1,14 @@
 const yargs = require("yargs");
 const fs = require("fs");
-const csv = require("csv-parser");
 const https = require("https");
 const http = require("http");
 const _ = require("lodash");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 
-function readCSV(filePath) {
-  return new Promise(accept => {
-    const results = [];
+const readCSV = require("./csv").readCSV;
+const checkStatusCode = require("./check").checkStatusCode;
 
-    fs.createReadStream(filePath)
-      .pipe(csv({ skipLines: 2 }))
-      .on("data", data => results.push(data))
-      .on("end", () => {
-        accept(results);
-      });
-  });
-}
-
-function printProgress(count) {
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
-  process.stdout.write(count + "%");
-}
-
-let progress = 0;
-let total = 0;
-
-function oneComplete() {
-  progress += 1;
-  printProgress(Math.round((progress / total) * 100));
-}
-
-function checkStatusCode(link) {
-  return new Promise((success, error) => {
-    let actualHTTP = null;
-    if (link.match(/^http:\/\//)) {
-      actualHTTP = http;
-    } else {
-      actualHTTP = https;
-    }
-
-    actualHTTP
-      .request(link, { method: "HEAD", timeout: 3000 }, response => {
-        success({
-          link: link,
-          code: response.statusCode
-        });
-        oneComplete();
-      })
-      .on("error", err => {
-        success({
-          link: "link",
-          code: null
-        });
-        oneComplete();
-      })
-      .end();
-  });
-}
-
-var argv = yargs.option("in").option("out").argv;
+const argv = yargs.option("in").option("out").argv;
 
 const inFilePath = argv.in;
 const outFilePath = argv.out;
@@ -81,11 +28,11 @@ readCSV(inFilePath).then(data => {
 
   const takeLinks = _.uniq(links);
 
-  total = takeLinks.length;
+  const total = takeLinks.length;
 
   Promise.all(
     takeLinks.map(link => {
-      return checkStatusCode(link);
+      return checkStatusCode(link, total);
     })
   )
     .then(data => {
