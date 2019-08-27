@@ -1,0 +1,16 @@
+{
+  "name": "exlnt-link-check",
+  "private": true,
+  "license": "MIT",
+  "main": "./src/main.js",
+  "scripts": {
+    "_prettier": "prettier './{**/,/}*.{js,md,yml,yaml,json}'",
+    "link-check": "node ./src/main.js",
+    "format": "yarn _prettier --write",
+    "lint": "yarn _prettier --check"
+  },
+  "devDependencies": {
+    "husky": "3.0.4",
+    "prettier": "1.18.2"
+  }
+}
