@@ -2,8 +2,18 @@
 
 ## Getting Started
 
+Download **Outbound Link Report** and rename it as `in.csv`.
+
+Install Yarn dependencies.
+
 ```bash
-yarn install && yarn link-check --in in.csv --out out.csv
+yarn install
+```
+
+Run `link-check` command to generate report which will be saved to file `out.csv`.
+
+```bash
+yarn link-check --in in.csv --out out.csv
 ```
 
 ## Want to lean more?

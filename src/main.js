@@ -79,8 +79,7 @@ readCSV(inFilePath).then(data => {
     }
   });
 
-  const takeLinks = _.take(_.uniq(links), 50);
-  // const takeLinks = _.uniq(links);
+  const takeLinks = _.uniq(links);
 
   total = takeLinks.length;
 
@@ -90,15 +89,11 @@ readCSV(inFilePath).then(data => {
     })
   )
     .then(data => {
-      // TODO: Now reconcile data with original links.
-
       const keyedVals = [];
 
       data.forEach(datum => {
         keyedVals[datum.link] = datum.code;
       });
-
-      const okStatusCode = [200];
 
       const results = _.filter(
         csvData.map(datum => {
@@ -119,7 +114,10 @@ readCSV(inFilePath).then(data => {
             link: link !== undefined ? link : "unknown",
             entry: entryId !== undefined ? entry : "unknown",
             status: status !== undefined ? status : "unknown",
-            ok: _.includes(okStatusCode, status) ? "Yes" : "No"
+            statusExplain:
+              status !== undefined
+                ? `https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/${status}`
+                : "unknown"
           };
         }),
         value => value !== null
@@ -131,7 +129,7 @@ readCSV(inFilePath).then(data => {
           { id: "link", title: "Link" },
           { id: "entry", title: "Entry" },
           { id: "status", title: "Status" },
-          { id: "ok", title: "Is Ok?" }
+          { id: "statusExplain", title: "Status Explanation" }
         ]
       });
 
