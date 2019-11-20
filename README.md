@@ -1,7 +1,7 @@
 # [ExLNT Link Check](https://github.com/dbtedman/exlnt-link-check)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/exlnt-link-check/badge.svg?style=flat-square)](https://snyk.io/test/github/dbtedman/exlnt-link-check)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/maintainability)](https://codeclimate.com/github/dbtedman/exlnt-link-check/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/54f9304cff9c47f4303e/maintainability)](https://codeclimate.com/github/dbtedman/exlnt-link-check/maintainability)
 [![GitHub Actions](https://github.com/dbtedman/exlnt-link-check/workflows/Test/badge.svg)](https://github.com/dbtedman/exlnt-link-check/actions?workflow=Test)
 
 ## Getting Started
