@@ -4,8 +4,5 @@
 #
 #-------------------------------------------------------------------------------
 
-# Library Code
+# Node dependencies.
 /node_modules/
-
-# Generated Code
-/package-lock.json

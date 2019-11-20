@@ -5,19 +5,18 @@
   "main": "./src/main.js",
   "scripts": {
     "_prettier": "prettier './{**/,/}*.{js,md,yml,yaml,json}'",
-    "link-check": "node ./src/main.js",
     "format": "yarn _prettier --write",
+    "link-check": "node ./src/main.js",
     "lint": "yarn _prettier --check"
   },
   "dependencies": {
     "csv-parser": "2.3.0",
+    "csv-writer": "1.5.0",
     "lodash": "4.17.15",
     "yargs": "14.0.0"
   },
   "devDependencies": {
-    "csv-writer": "1.5.0",
     "husky": "3.0.4",
-    "prettier": "1.18.2",
-    "yargs": "14.0.0"
+    "prettier": "1.18.2"
   }
 }
