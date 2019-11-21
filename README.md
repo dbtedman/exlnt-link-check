@@ -4,6 +4,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/54f9304cff9c47f4303e/maintainability)](https://codeclimate.com/github/dbtedman/exlnt-link-check/maintainability)
 [![GitHub Actions](https://github.com/dbtedman/exlnt-link-check/workflows/Test/badge.svg)](https://github.com/dbtedman/exlnt-link-check/actions?workflow=Test)
 
+Tool used for populating [ExLNT](https://app.secure.griffith.edu.au/exlnt/) link check report with validation statuses.
+
 ## Getting Started
 
 Download **Outbound Link Report** and rename it as `in.csv`.
