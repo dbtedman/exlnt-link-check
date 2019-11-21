@@ -86,6 +86,7 @@ readCSV(inFilePath).then(data => {
       });
     })
     .catch(error => {
+      // TODO: Handle this.
       console.error(error);
     });
 });
