@@ -1,8 +1,6 @@
 # [ExLNT Link Check](https://github.com/dbtedman/exlnt-link-check)
 
-[![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/exlnt-link-check/badge.svg?style=flat-square)](https://snyk.io/test/github/dbtedman/exlnt-link-check)
-[![Maintainability](https://api.codeclimate.com/v1/badges/54f9304cff9c47f4303e/maintainability)](https://codeclimate.com/github/dbtedman/exlnt-link-check/maintainability)
-[![GitHub Actions](https://github.com/dbtedman/exlnt-link-check/workflows/Test/badge.svg)](https://github.com/dbtedman/exlnt-link-check/actions?workflow=Test)
+> This project is no longer maintained.
 
 Tool used for populating [ExLNT](https://app.secure.griffith.edu.au/exlnt/) link check report with validation statuses.
 
